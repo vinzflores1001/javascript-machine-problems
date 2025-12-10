@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Problems - Client-Side JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .problem { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        button { margin-top: 5px; }
+        .output { margin-top: 10px; font-weight: bold; color: #0066cc; }
+    </style>
+</head>
+<body>
+
+    <h1>Client-Side JavaScript Machine Problems</h1>
+
+    <!-- Problem 1: ReplaceAll -->
+    <div class="problem">
+        <h3>Problem 1: ReplaceAll</h3>
+        <input id="input1" placeholder="Enter text with spaces" value="ba l am an">
+        <button onclick="replaceAll()">Replace All Spaces</button>
+        <div id="output1" class="output"></div>
+    </div>
+
+    <!-- Problem 2: SearchWord -->
+    <div class="problem">
+        <h3>Problem 2: SearchWord</h3>
+        <input id="sentence2" placeholder="Enter sentence" value="JavaScript is easy"><br>
+        <input id="word2" placeholder="Enter word to search" value="easy"><br>
+        <button onclick="searchWord()">Search Word</button>
+        <div id="output2" class="output"></div>
+    </div>
+
+    <!-- Problem 3: ReplaceWord -->
+    <div class="problem">
+        <h3>Problem 3: ReplaceWord</h3>
+        <input id="sentence3" placeholder="Enter sentence" value="I love PHP"><br>
+        <input id="oldWord3" placeholder="Word to replace" value="PHP"><br>
+        <input id="newWord3" placeholder="New word" value="JavaScript"><br>
+        <button onclick="replaceWord()">Replace First Occurrence</button>
+        <div id="output3" class="output"></div>
+    </div>
+
+    <!-- Problem 4: CountCharacters -->
+    <div class="problem">
+        <h3>Problem 4: CountCharacters</h3>
+        <input id="input4" placeholder="Enter text" value="Hello World">
+        <button onclick="countCharacters()">Count Characters</button>
+        <div id="output4" class="output"></div>
+    </div>
+
+    <!-- Problem 5: EmailCheck -->
+    <div class="problem">
+        <h3>Problem 5: EmailCheck</h3>
+        <input id="email5" placeholder="Enter email" value="student@email.com">
+        <button onclick="checkEmail()">Validate Email</button>
+        <div id="output5" class="output"></div>
+    </div>
+
+    <script>
+        // Problem 1: ReplaceAll
+        function replaceAll() {
+            let input = document.getElementById("input1").value;
+            let output = input.trim().replace(/ /g, "");
+            document.getElementById("output1").innerText = output;
+        }
+
+        // Problem 2: SearchWord
+        function searchWord() {
+            let sentence = document.getElementById("sentence2").value;
+            let word = document.getElementById("word2").value;
+            if (sentence.includes(word)) {
+                document.getElementById("output2").innerText = "Found";
+            } else {
+                document.getElementById("output2").innerText = "Not Found";
+            }
+        }
+
+        // Problem 3: ReplaceWord
+        function replaceWord() {
+            let sentence = document.getElementById("sentence3").value;
+            let oldWord = document.getElementById("oldWord3").value;
+            let newWord = document.getElementById("newWord3").value;
+            let output = sentence.replace(oldWord, newWord);
+            document.getElementById("output3").innerText = output;
+        }
+
+        // Problem 4: CountCharacters
+        function countCharacters() {
+            let input = document.getElementById("input4").value;
+            let trimmed = input.trim();
+            document.getElementById("output4").innerText = trimmed.length;
+        }
+
+        // Problem 5: EmailCheck
+        function checkEmail() {
+            let email = document.getElementById("email5").value;
+            if (email.includes("@")) {
+                document.getElementById("output5").innerText = "Valid";
+            } else {
+                document.getElementById("output5").innerText = "Invalid";
+            }
+        }
+    </script>
+
+</body>
+</html>
